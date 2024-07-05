@@ -2,7 +2,8 @@
 
 $name = $_POST["name"];
 $email = $_POST["email"];
-$password = $_POST["password"];
+$phone = $_POST["phone"];
+$message = $_POST["message"];
 
 // Database Connection
 $db_server = "localhost";
@@ -16,9 +17,9 @@ $conn = new mysqli($db_server,$db_user,$db_pass,$db_name);
 if($conn->connect_error) {
   die("Failed to connect: ".$conn->connect_error);
 } else {
-    $stmt = $conn->prepare("INSERT INTO registration(name, email, password)
+    $stmt = $conn->prepare("INSERT INTO contact(name, email, phone, message)
     values(?,?,?)");
-    $stmt->bind_param("sss",$name,$email,$password);
+    $stmt->bind_param("ssis",$name,$email,$phone,$message);
     $stmt->execute();
     
     $stmt->close();
