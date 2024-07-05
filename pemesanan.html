@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Pemesanan - Kaltara Water</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark stick-top"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"
+          ><img src="assets/logoK.png" alt="..." /> Kaltara Water</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="./pemesanan.html">Pemesanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#portfolio">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#about">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#voucher">Voucher</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#contact">Hubungi Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html">Masuk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./register.html">Daftar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- form -->
+    <div class="container my-4">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-10">
+          <div class="card shadow">
+            <div class="card-body">
+              <h2 class="card-title mt-3">Layanan Pemesanan</h2>
+              <form id="pemesananForm">
+                <div class="form-group my-3">
+                  <label for="kotaTujuan">Kota Tujuan</label>
+                  <select class="form-control" id="kotaTujuan">
+                    <option value="">Pilih Kota Tujuan</option>
+                    <option value="Tarakan">Tarakan</option>
+                    <option value="Tanjung Selor">Tanjung Selor</option>
+                    <option value="Kabupaten Tana Tidung">
+                      Kabupaten Tana Tidung
+                    </option>
+                    <option value="Malinau">Malinau</option>
+                    <option value="Nunukan">Nunukan</option>
+                  </select>
+                </div>
+                <div class="form-group my-3">
+                  <label for="kotaAsal">Kota Asal</label>
+                  <select class="form-control" id="kotaAsal">
+                    <option value="">Pilih Kota Asal</option>
+                    <option value="Tarakan">Tarakan</option>
+                    <option value="Tanjung Selor">Tanjung Selor</option>
+                    <option value="Kabupaten Tana Tidung">
+                      Kabupaten Tana Tidung
+                    </option>
+                    <option value="Malinau">Malinau</option>
+                    <option value="Nunukan">Nunukan</option>
+                  </select>
+                </div>
+                <div class="form-group my-3">
+                  <label for="harga">Harga</label>
+                  <input type="text" class="form-control" id="harga" readonly />
+                </div>
+                <div class="form-group">
+                  <label for="jumlahOrang">Jumlah Orang</label>
+                  <select class="form-control" id="jumlahOrang">
+                    <option value="">Pilih Jumlah Orang</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div id="penumpangContainer"></div>
+                <div class="form-group my-3">
+                  <label for="tanggalKeberangkatan"
+                    >Tanggal Keberangkatan</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="tanggalKeberangkatan"
+                    value="${new Date().toISOString().split('T')[0]}"
+                  />
+                </div>
+                <div class="form-group my-3">
+                  <label for="jadwalKeberangkatan">Jadwal Keberangkatan</label>
+                  <select class="form-control" id="jadwalKeberangkatan">
+                    <option value="">Pilih Jadwal Keberangkatan</option>
+                  </select>
+                </div>
+                <div class="form-group my-3">
+                  <label for="totalBiaya">Total Biaya</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="totalBiaya"
+                    readonly
+                  />
+                </div>
+                <div class="form-group my-3">
+                  <label for="voucher">Masukkan voucher anda disini</label>
+                  <input type="text" class="form-control" id="voucher" />
+                </div>
+
+                <button type="submit my-3" class="btn btn-warning">
+                  Bayar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Script -->
+    <script src="./pemesanan.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="assets/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>
