@@ -18,7 +18,7 @@ if($conn->connect_error) {
   die("Failed to connect: ".$conn->connect_error);
 } else {
     $stmt = $conn->prepare("INSERT INTO contact(name, email, phone, message)
-    values(?,?,?)");
+    values(?,?,?,?)");
     $stmt->bind_param("ssis",$name,$email,$phone,$message);
     $stmt->execute();
     
